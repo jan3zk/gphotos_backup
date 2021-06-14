@@ -24,7 +24,7 @@ Run ```python quick_check_albums.py``` to show diff statistics between local and
 
 ### Optional: Search captions
 
-Captions are stored in the *.csv file for each album. Fast search for specific text in captions can be performed in terminal by ```grep -Ri --include \*.csv "text to search" path/to/albums```.
+To enable a fast caption search, all photo captions in each album are also saved to the *.csv file in a folder pertaining to the corresponding album. Fast search for specific text in captions can be performed in terminal by ```grep -Ri --include \*.csv "text to search" path/to/albums```.
 
 ## Other backup alternatives
 
