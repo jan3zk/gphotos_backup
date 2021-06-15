@@ -8,11 +8,11 @@ Google Photos Backup downloads Google Photos web albums to the local drive. Phot
 
 Code runs in Python 3. Before you run any python script install dependencies with ```pip install -r requirements.txt```.
 
-## Usage
-
-### Create credentials
+### Authorize access
 
 In order for the application to work the credentials file should be created. Go to the [https://developers.google.com/photos/library/guides/get-started](https://developers.google.com/photos/library/guides/get-started) and click on the "Enable the Google Photos Library API" button. Select "Create new project". Enter the arbitrary project name and product name. In the "Where are you calling from?" field choose the "Desktop app" and press the button "CREATE" and then "DOWNLOAD CLIENT CONFIGURATION" which downloads the credentials.json file. Move the file into the folder of this repository. If needed, all subsequent downloads of the credentials file can be performed from the [https://console.developers.google.com/apis/credentials](https://console.developers.google.com/apis/credentials).
+
+## Usage
 
 ### Download album(s)
 
