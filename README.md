@@ -1,8 +1,8 @@
-# GPhotos Backup
+# Google Photos Backup
 
 ## Overview
 
-GPhotos Backup downloads web albums on Google Photos to the local drive. Photos in each album are downloaded into the separate folder, while the photo comments are embedded into EXIF metadata.<sup id="a1">[1](#f1)</sup>
+Google Photos Backup downloads web albums on Google Photos to the local drive. Photos in each album are downloaded into the separate folder, while the photo comments are embedded into EXIF metadata.<sup id="a1">[1](#f1)</sup> This app only serves for local backup and cannot upload photos to Google Photos.
 
 ## Installation
 
