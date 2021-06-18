@@ -6,7 +6,7 @@ Google Photos Backup downloads Google Photos web albums to the local drive. Phot
 
 ## Installation
 
-Code runs in Python 3. Before you run any python script install dependencies with ```pip install -r requirements.txt```.
+Code runs in Python 3. Before you run any script install dependencies with ```pip install -r requirements.txt```.
 
 ### Authorize access
 
