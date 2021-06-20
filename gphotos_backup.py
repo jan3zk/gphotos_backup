@@ -161,7 +161,7 @@ def gphotos_backup():
             print('Photos with duplicated file names that were not copied: ')
             print(*duplicates, sep=', ')
 
-        # Check for photos that are missing on server side
+        # Check for photos that are missing on the server side
         for _, _, lfiles in os.walk(album_dir):
             local_files = [f for f in lfiles if not f.endswith('.csv')]
         not_on_server = np.setdiff1d(local_files ,file_names)
@@ -175,7 +175,7 @@ if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('-a', '--albums',
         type = str,
-        nargs='+',
+        nargs = '+',
         default = ['all'],
         help = "A list of album names to backup. Backup everything if set to 'all'.")
     ap.add_argument('-d', '--dir',
