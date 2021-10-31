@@ -26,7 +26,6 @@ def simple_get(url):
         log_error('Error during requests to {0} : {1}'.format(url, str(e)))
         return None
 
-
 def is_good_response(resp):
     '''
     Returns True if the response seems to be HTML, False otherwise.
@@ -35,7 +34,6 @@ def is_good_response(resp):
     return (resp.status_code == 200
             and content_type is not None 
             and content_type.find('html') > -1)
-
 
 def log_error(e):
     '''
@@ -46,7 +44,6 @@ def log_error(e):
     print(e)
 
 def main():
-
     web_albums = [] #web albums
     web_size = [] #web album size
     ext_albums = [] #extra albums
@@ -56,7 +53,7 @@ def main():
 
     webbrowser.open('https://photos.google.com/albums')
     input('''The opened web site should be saved as a HTML only web page to the 
-    folder of this repo. When finished, press Enter key to continue...''')
+    folder of this repo. When finished, press <Enter> to continue...''')
     print('\nA list of all web albums:')
     raw_html = open('Albums - Google Photos.html')
     html = BeautifulSoup(raw_html, 'html.parser')
@@ -94,7 +91,7 @@ def main():
     for ext_album in ext_albums:
         print(ext_album)
 
-    print('\nA list of albums with different number of photos:')
+    print('\nA list of albums with different number of photos/videos:')
     for idx, album in enumerate(dl_albums):
         if album in web_albums:
             ws = web_size[web_albums.index(album)] 
@@ -110,9 +107,7 @@ def main():
 
 
 if __name__ == '__main__':
-
     ap = argparse.ArgumentParser()
-
     ap.add_argument(
         '-d','--dir',
         type = str,
@@ -123,6 +118,5 @@ if __name__ == '__main__':
     )
     
     args = ap.parse_args()
-
     main()
 

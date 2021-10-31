@@ -52,7 +52,7 @@ def gphotos_backup():
             creds = flow.run_local_server()
         with open(pickleFile, 'wb') as token:
             pickle.dump(creds, token)
-    service = build('photoslibrary', 'v1', credentials=creds, cache_discovery=False)
+    service = build('photoslibrary', 'v1', credentials=creds, cache_discovery=False, static_discovery=False)
 
     # Get all album names
     nextpagetoken = 'Dummy'
