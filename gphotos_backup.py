@@ -32,12 +32,8 @@ def download_file(url:str, destination_folder:str, file_name:str):
       f.close()
 
 def gphotos_backup():
-  if os.path.isfile('client_secret*.json'):
-    credentialsFile = glob('client_secret*.json')[0]
-  else:
-    credentialsFile = 'credentials.json'
+  credentialsFile = glob('*.json')[0]
   pickleFile = 'token.pickle'
-
   SCOPES = ['https://www.googleapis.com/auth/photoslibrary.readonly']
   creds = None
   if os.path.exists(pickleFile):
