@@ -20,7 +20,7 @@ Run ```python gphotos_backup.py``` to backup all albums, or add the argument ```
 
 ### View albums locally
 
-To view locally downloaded albums, it is recomended to use [Nomacs](https://nomacs.org), where you can open the album folder by selecting "File > Open Directory" from the menu. Image comments can be viewed by selecting "Panels > Metadata". Right click on the panel, select the "Change entries" and make sure that the "Exif > Image > ImageDescription" is selected.  
+To view locally downloaded albums, it is recomended to use [Nomacs](https://nomacs.org), where you can open the album folder by selecting "File > Open Directory" from the menu. Image comments can be viewed by selecting "Panels > Metadata". Right click on the [panel](https://nomacs.org/metadata-hud), select the "Change entries" and make sure that the "Exif > Image > ImageDescription" is selected.  
 
 #### Optional: Show differences between the local and remote
 
