@@ -18,11 +18,11 @@ The app needs authorization to read from Google Photos. For this purpose, the cr
 
 Run ```python gphotos_backup.py``` to backup all albums, or add the argument ```-a 'album name'``` to create a backup of the specified album.
 
-### Optional: Show differences between the local and remote
+#### Optional: Show differences between the local and remote
 
 Run ```python quick_check_albums.py``` to display the differences between the local and remote album collections. This command compares only the album names and the number of files in each album between the local and remote collections.
 
-### Optional: Search captions
+#### Optional: Search captions
 
 To allow a fast photo caption search, all captions in each album are also stored in a *.csv file in a folder associated with that album. A fast search for a specific text in the captions can be performed in terminal with ```grep -Ri --include \*.csv "text to search" path/to/albums```.
 
