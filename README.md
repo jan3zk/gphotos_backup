@@ -18,16 +18,20 @@ The app needs authorization to read from Google Photos. For this purpose, the cr
 
 Run ```python gphotos_backup.py``` to backup all albums, or add the argument ```-a 'album name'``` to create a backup of the specified album.
 
+### View albums locally
+
+To view locally downloaded albums, it is recomended to use [Nomacs](https://nomacs.org), where you can open the album folder by selecting "File > Open Directory" from the menu. Image comments can be viewed by selecting "Panels > Metadata". Right click on the panel, select the "Change entries" and make sure that the "Exif > Image > ImageDescription" is selected.  
+
 #### Optional: Show differences between the local and remote
 
 Run ```python quick_check_albums.py``` to display the differences between the local and remote album collections. This command compares only the album names and the number of files in each album between the local and remote collections.
 
-#### Optional: Search captions
+#### Optional: Search comments
 
-To allow a fast photo caption search, all captions in each album are also stored in a *.csv file in a folder associated with that album. A fast search for a specific text in the captions can be performed in terminal with ```grep -Ri --include \*.csv "text to search" path/to/albums```.
+To allow a fast photo comment search, all comments in each album are also stored in a *.csv file in a folder associated with that album. A fast search for a specific text in the comments can be performed in terminal with ```grep -Ri --include \*.csv "text to search" path/to/albums```.
 
 ## Other backup alternatives
 
-The [rclone](https://rclone.org/googlephotos/) backend for Google Photos is a specialized backend for transferring photos and videos to and from Google Photos. Compared to this app, the main disadvantage of rclone is that it discards photo captions.
+The [rclone](https://rclone.org/googlephotos/) backend for Google Photos is a specialized backend for transferring photos and videos to and from Google Photos. Compared to this app, the main disadvantage of rclone is that it discards photo comments.
 
 <b id="f1">1</b> Note that if you edit your photo on a server side after backup procedure is performed, re-running the backup will not update the edited photo on the local side, since the API does not provide the date when the photo was last edited. To update such photos, you need to delete them manually on the local side and rerun the backup command. [↩](#a1)

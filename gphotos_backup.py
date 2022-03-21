@@ -115,7 +115,7 @@ def gphotos_backup():
           if img_ext in ['.jpg','.JPG','.jpeg','.JPEG','.tiff','.TIFF','.tif','.TIF']:
             exif_dict = piexif.load(img_path)
             exif_dict["0th"][piexif.ImageIFD.ImageDescription] = bytes(user_comment, "utf-8")
-            exif_dict["Exif"][piexif.ExifIFD.UserComment] = piexif.helper.UserComment.dump(user_comment,encoding='unicode')
+            exif_dict["Exif"][piexif.ExifIFD.UserComment] = piexif.helper.UserComment.dump(user_comment,encoding='unicode')#unicode
             exif_bytes = piexif.dump(exif_dict) 
             piexif.insert(exif_bytes, img_path)
           elif img_ext in ['.png','.PNG']:
