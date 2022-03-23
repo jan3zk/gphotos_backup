@@ -34,4 +34,4 @@ To allow a fast photo comment search, all comments in each album are also stored
 
 The [rclone](https://rclone.org/googlephotos/) backend for Google Photos is a specialized backend for transferring photos and videos to and from Google Photos. Compared to this app, the main disadvantage of rclone is that it discards photo comments.
 
-<b id="f1">1</b> Note that if you edit your photo on a server side after backup procedure is performed, re-running the backup will not update the edited photo on the local side, since the API does not provide the date when the photo was last edited. To update such photos, you need to delete them manually on the local side and rerun the backup command. [↩](#a1)
+<b id="f1">1</b> Note that if you edit your photo on a server side after the backup procedure is performed, re-running the backup will not update the edited photo on the local side, since the API does not provide the date when the photo was last edited. To update such photos, you need to delete them manually on the local side and rerun the backup command. [↩](#a1)
