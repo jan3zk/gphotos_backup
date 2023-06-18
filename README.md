@@ -2,36 +2,46 @@
 
 ## Overview
 
-Google Photos Backup downloads Google Photos web albums to the local drive. The photos in each album are downloaded to a separate folder, while the photo comments are embedded in the EXIF metadata.<sup id="a1">[1](#f1)</sup> This app only serves as a local backup and cannot upload photos to Google Photos.
+Google Photos Backup is a tool designed to download albums from Google Photos to your local drive. Each album gets downloaded to a separate folder, with photo comments embedded directly into the EXIF metadata.<sup id="a1">[1](#f1)</sup> Please note, this application solely serves as a local backup tool and does not provide functionality to upload photos to Google Photos.
 
 ## Installation
 
-The code runs in Python 3. Before running any script, install the dependencies with ```pip install -r requirements.txt```.
+This application requires Python 3 to run. Before executing any scripts, ensure you've installed the necessary dependencies with ```pip install -r requirements.txt```.
 
-### Authorize access
+### Granting Access
 
-The app needs authorization to read from Google Photos. For this purpose, the credentials file should be created. Go to the [https://developers.google.com/photos/library/guides/get-started](https://developers.google.com/photos/library/guides/get-started) page and click the "Enable the Google Photos Library API" button. Select "Create new project". Enter arbitrary project name and product name. In the "Where are you calling from?" field, select the "Desktop app" and click the "CREATE" button and then "DOWNLOAD CLIENT CONFIGURATION", which will download the credentials.json file. Move the file to the folder of this repository. If needed, all subsequent downloads of the credentials file can be performed from the [https://console.developers.google.com/apis/credentials](https://console.developers.google.com/apis/credentials).
+Google Photos Backup requires authorization to access Google Photos. To facilitate this, you will need to generate a credentials file. Follow the steps below:
+
+1. Visit the [Google Photos Library API page](https://developers.google.com/photos/library/guides/get-started).
+2. Click on "Enable the Google Photos Library API".
+3. Select "Create new project".
+4. Enter your chosen project name and product name.
+5. In the "Where are you calling from?" field, select "Desktop app".
+6. Click the "CREATE" button, then "DOWNLOAD CLIENT CONFIGURATION". This action downloads the `credentials.json` file.
+7. Move the `credentials.json` file into this repository's folder.
+
+If you need to download the credentials file again in the future, you can do so from the [Google API Console](https://console.developers.google.com/apis/credentials).
 
 ## Usage
 
-### Download album(s)
+### Downloading Album(s)
 
-Run ```python gphotos_backup.py``` to backup all albums, or add the argument ```-a 'album name'``` to create a backup of the specified album.
+Execute ```python gphotos_backup.py``` to backup all albums. Alternatively, you can specify a particular album by adding the argument ```-a 'album name'``` for a targeted backup.
 
-### View albums locally
+### Viewing Albums Locally
 
-To view locally downloaded albums, it is recomended to use [Nomacs](https://nomacs.org), where you can open the album folder by selecting "File > Open Directory" from the menu. Image comments can be viewed by selecting "Panels > Metadata". Right click on the [panel](https://nomacs.org/metadata-hud), select the "Change entries" and make sure that the "Exif > Image > ImageDescription" is selected.  
+We recommend [Nomacs](https://nomacs.org) for viewing your downloaded albums. Open the album folder via "File > Open Directory". You can access the image comments by navigating to "Panels > Metadata". In the [metadata panel](https://nomacs.org/metadata-hud), right-click, select "Change entries", and ensure that "Exif > Image > ImageDescription" is selected.
 
-#### Optional: Show differences between the local and remote
+#### Optional: Compare Local and Remote Albums
 
-Run ```python quick_check_albums.py``` to display the differences between the local and remote album collections. This command compares only the album names and the number of files in each album between the local and remote collections.
+Run ```python quick_check_albums.py``` to identify differences between your local and remote album collections. This script only compares the album names and the number of files in each album.
 
-#### Optional: Search comments
+#### Optional: Search Comments
 
-To allow a fast photo comment search, all comments in each album are also stored in a *.csv file in a folder associated with that album. A fast search for a specific text in the comments can be performed in terminal with ```grep -Ri --include \*.csv "text to search" path/to/albums```.
+For efficient searching within photo comments, each album's comments are stored in a *.csv file in the associated album folder. To search for specific text in the comments, use the following terminal command: ```grep -Ri --include \*.csv "text to search" path/to/albums```.
 
-## Other backup alternatives
+## Alternative Backup Options
 
-The [rclone](https://rclone.org/googlephotos/) backend for Google Photos is a specialized backend for transferring photos and videos to and from Google Photos. Compared to this app, the main disadvantage of rclone is that it discards photo comments.
+The [rclone](https://rclone.org/googlephotos/) backend for Google Photos is an option for transferring photos and videos to and from Google Photos. However, one main downside of rclone when compared to our tool is its lack of support for preserving photo comments.
 
-<b id="f1">1</b> Note that if you edit your photo on a server side after the backup procedure is performed, re-running the backup will not update the edited photo on the local side, since the API does not provide the date when the photo was last edited. To update such photos, you need to delete them manually on the local side and rerun the backup command. [↩](#a1)
+<b id="f1">1</b> Please be aware that if you edit your photo on Google Photos after the backup process, re-running the backup will not update the edited photo locally. This is due to the Google Photos API not providing information on when the photo was last edited. To update such photos, you need to manually delete them on the local side and rerun the backup command. [↩](#a1)
