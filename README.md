@@ -2,7 +2,9 @@
 
 ## Overview
 
-Google Photos Backup is a tool designed to download albums from Google Photos to your local drive. Each album gets downloaded to a separate folder. The main advantage of this backup tool over comparable solutions is its ability to preserve photo comments. These comments are not just stored but are directly embedded into the EXIF metadata. This feature facilitates the display of comments alongside the photos in virtually any widely-used image viewer.<sup id="a1">[1](#f1)</sup> Please note, this application solely serves as a local backup tool and does not provide functionality to upload photos to Google Photos.
+Google Photos Backup is a tool designed to download albums from Google Photos to your local drive. Each album gets downloaded to a separate folder. The main advantage of this backup tool over comparable solutions is its ability to preserve photo comments. These comments are not just stored but are directly embedded into the EXIF metadata. This feature facilitates the display of comments alongside the photos in virtually any widely-used image viewer.
+
+Note that this application exclusively functions as a local backup tool, lacking the capability to upload photos to Google Photos. Furthermore, any modifications made to a photo on Google Photos post-backup will not be reflected in the local copy if the backup is run again. This limitation arises because the Google Photos API does not offer details regarding the last edit made to a photo. To ensure your locally stored photos mirror the updated versions on Google Photos, you must manually delete the outdated images from your local storage and execute the backup command once more.
 
 ## Installation
 
@@ -44,4 +46,4 @@ For efficient searching within photo comments, each album's comments are stored 
 
 The [rclone](https://rclone.org/googlephotos/) backend for Google Photos is an option for transferring photos and videos to and from Google Photos. However, one main downside of rclone when compared to our tool is its lack of support for preserving photo comments.
 
-<b id="f1">1</b> Please be aware that if you edit your photo on Google Photos after the backup process, re-running the backup will not update the edited photo locally. This is due to the Google Photos API not providing information on when the photo was last edited. To update such photos, you need to manually delete them on the local side and rerun the backup command. [↩](#a1)
+<b id="f1">1</b> Please  [↩](#a1)
