@@ -45,5 +45,3 @@ For efficient searching within photo comments, each album's comments are stored 
 ## Alternative Backup Options
 
 The [rclone](https://rclone.org/googlephotos/) backend for Google Photos is an option for transferring photos and videos to and from Google Photos. However, one main downside of rclone when compared to our tool is its lack of support for preserving photo comments.
-
-<b id="f1">1</b> Please  [↩](#a1)
