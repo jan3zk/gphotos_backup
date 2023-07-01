@@ -2,7 +2,7 @@
 
 ## Overview
 
-Google Photos Backup is a tool designed to download albums from Google Photos to your local drive. Each album gets downloaded to a separate folder, with photo comments embedded directly into the EXIF metadata.<sup id="a1">[1](#f1)</sup> Please note, this application solely serves as a local backup tool and does not provide functionality to upload photos to Google Photos.
+Google Photos Backup is a tool designed to download albums from Google Photos to your local drive. Each album gets downloaded to a separate folder. The main advantage of this backup tool over comparable solutions is its ability to preserve photo comments. These comments are not just stored but are directly embedded into the EXIF metadata. This feature facilitates the display of comments alongside the photos in virtually any widely-used image viewer.<sup id="a1">[1](#f1)</sup> Please note, this application solely serves as a local backup tool and does not provide functionality to upload photos to Google Photos.
 
 ## Installation
 
