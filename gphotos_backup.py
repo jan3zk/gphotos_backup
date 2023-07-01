@@ -121,7 +121,7 @@ def gphotos_backup(work_dir, albums, max_retries):
         creation_time = parser.parse(media_file['mediaMetadata']['creationTime'])
         save_metadata(str(file_path), user_comment, creation_time, file_ext)
     
-      f_cap.write(f'{file_name}\t{user_comment}\n')
+        f_cap.write(f'{file_name}\t{user_comment}\n')
       request = service.mediaItems().list_next(request, response)
 
     f_cap.close()
